@@ -1,6 +1,7 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * jQuery sentences to adapt and format imported content.
+ * qibdip 2011
+ * v1.2
  */
 var $qibdip_basket=jQuery.noConflict();
 $qibdip_basket(document).ready(function(){
@@ -18,6 +19,7 @@ $qibdip_basket(document).ready(function(){
             })
             $qibdip_basket("#qibdip_basket_darrera .jornadesSeguents").html(' ');
             $qibdip_basket('#qibdip_basket_darrera td:contains("[+]")').remove();
+            $qibdip_basket('#qibdip_basket_darrera tr:first th:last').remove();
         });
         $qibdip_basket("#qibdip_basket_titol").after('<div id="qibdip_basket_temporal"></div>');
         $qibdip_basket("#qibdip_basket_temporal").load(url+" #jorn",'',function(){
