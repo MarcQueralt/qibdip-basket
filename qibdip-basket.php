@@ -21,14 +21,22 @@ wp_enqueue_script('qibdip-basket');
 function qibdip_basket_classificacio($attr) {
     $text = "";
     if (isset($attr['id'])):
-        $text.=sprintf("<h2>%s</h2>", __("Classificació", QIBDIP_BASQUET));
         $text.='<div id="qibdip_basket_container">';
-        $text.='<div id="qibdip_classificacio">';
+        $text.=sprintf('<h2 id="qibdip_basket_titol">%s</h2>', __("Classificació", QIBDIP_BASQUET));
+        $text.='<div id="qibdip_basket_darrera">';
         $text.='<input type="hidden" id="qibdip_id" value="'.$attr['id'].'"/>';
         $text.='<input type="hidden" id="qibdip_parser_url" value="'.plugin_dir_url(__FILE__).'"/>';
         $text.='</div>';
+        $text.='<div id="qibdip_basket_classificacio">';
+        $text.='<input type="hidden" id="qibdip_id" value="'.$attr['id'].'"/>';
+        $text.='<input type="hidden" id="qibdip_parser_url" value="'.plugin_dir_url(__FILE__).'"/>';
+        $text.='</div>';
+        $text.='<div id="qibdip_basket_propera">';
+        $text.='<input type="hidden" id="qibdip_id" value="'.$attr['id'].'"/>';
+        $text.='<input type="hidden" id="qibdip_parser_url" value="'.plugin_dir_url(__FILE__).'"/>';
         $text.='</div>';
         $text.='<a id="quibdip_link_classificacio" href="' . QIBDIP_BASQUET_URL_CLASSIFICACIO . '/' . $attr['id'] . '">' . __('Veure la classificació a basquetcatala.cat', QIBDIP_BASQUET) . '</a>';
+        $text.='</div>';
     endif;
     return $text;
 }
